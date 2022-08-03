@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainframe" prefHeight="269.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gok.simplepdf.mainController">
+<AnchorPane fx:id="mainframe" prefHeight="269.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gok.simplepdf.mainUsingTextField_Controller">
    <children>
       <Button fx:id="addBtn" layoutX="14.0" layoutY="227.0" mnemonicParsing="false" onAction="#getFiles" prefHeight="25.0" prefWidth="77.0" text="Add File">
          <graphic>

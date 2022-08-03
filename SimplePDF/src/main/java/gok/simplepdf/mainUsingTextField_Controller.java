@@ -5,9 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -17,7 +15,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.ResourceBundle;
 
-public class mainController implements Initializable {
+public class mainUsingTextField_Controller implements Initializable {
 
     @FXML
     TextArea txt;
