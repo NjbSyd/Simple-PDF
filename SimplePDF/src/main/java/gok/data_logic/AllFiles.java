@@ -6,12 +6,12 @@ import java.util.List;
 
 public class AllFiles {
     LinkedList<oneFile> oneFileList = new LinkedList<>();
-
     public AllFiles(List<File> files) {
         for (File currentFile : files) {
             String fileName = currentFile.getName();
             String filePath = currentFile.getAbsolutePath();
-            oneFileList.add(new oneFile(fileName, filePath));
+            String parentPath=currentFile.getParent();
+            oneFileList.add(new oneFile(fileName, filePath,parentPath));
         }
     }
 
@@ -22,6 +22,18 @@ public class AllFiles {
             temp.add(oneFile.fileName);
         }
         return temp.toArray(new String[0]);
+    }
+
+    public String[] getPaths() {
+        LinkedList<String> temp = new LinkedList<>();
+        for (oneFile oneFile : oneFileList) {
+            temp.add(oneFile.filePath);
+        }
+        return temp.toArray(new String[0]);
+    }
+
+    public String getParent(){
+        return oneFileList.get(0).parentPath;
     }
 
     public void remove(int index) {
