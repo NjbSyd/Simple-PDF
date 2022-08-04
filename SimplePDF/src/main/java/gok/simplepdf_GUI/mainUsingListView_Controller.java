@@ -5,6 +5,7 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.utils.PdfMerger;
 import gok.data_logic.AllFiles;
+import gok.data_logic.toPdf;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,6 +24,7 @@ public class mainUsingListView_Controller {
     AllFiles files;
 
     public void mergeFiles(ActionEvent actionEvent) {
+        boolean fileSkipped = false;
         PdfMerger pdfMerger = null;
         PdfDocument pdfDocument = null;
         try {
@@ -31,9 +33,28 @@ public class mainUsingListView_Controller {
             pdfDocument = new PdfDocument(new PdfWriter(file));
             pdfMerger = new PdfMerger(pdfDocument);
             for (String path : filePaths) {
-                PdfDocument tempPdf = new PdfDocument(new PdfReader(path));
-                pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
-                tempPdf.close();
+                PdfDocument tempPdf;
+                String s = checkPath(path);
+                switch (s) {
+                    case "doc" -> {
+                        tempPdf = toPdf.docToPdf(new File(path));
+                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
+                        tempPdf.close();
+                    }
+                    case "img" -> {
+                        tempPdf = toPdf.imgToPdf(new File(path));
+                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
+                        tempPdf.close();
+                    }
+                    case "pdf" -> {
+                        tempPdf = new PdfDocument(new PdfReader(path));
+                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
+                        tempPdf.close();
+                    }
+                    default -> {
+                        fileSkipped = true;
+                    }
+                }
             }
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Choose Some Files First!!");
@@ -42,6 +63,33 @@ public class mainUsingListView_Controller {
         }
         if (pdfMerger != null) pdfMerger.close();
         if (pdfDocument != null) pdfDocument.close();
+        if (!(myListView.getItems().size() <= 0)) myListView.getItems().remove(0, myListView.getItems().size());
+        System.out.println("file saved at " + files.getParent());
+        files = null;
+        if (fileSkipped) {
+            JOptionPane.showMessageDialog(null, "Some Files were Skipped because of incompatible File Format!!");
+        }
+
+    }
+
+    private String checkPath(String path) {
+        String[] arr = path.split("\\.");
+        int li = arr.length - 1;
+        if (arr[li].equalsIgnoreCase("pdf")) {
+            return "pdf";
+        }
+        if (arr[li].equalsIgnoreCase("doc")
+                || arr[li].equalsIgnoreCase("docx")) {
+            return "doc";
+        }
+
+        if (arr[li].equals("jpg")
+                || arr[li].equalsIgnoreCase("jpeg")
+                || arr[li].equalsIgnoreCase("png")
+                || arr[li].equalsIgnoreCase("bmp")) {
+            return "img";
+        }
+        return "other";
     }
 
     public void getFiles(ActionEvent actionEvent) {
