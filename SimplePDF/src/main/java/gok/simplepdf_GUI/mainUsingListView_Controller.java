@@ -26,12 +26,18 @@ public class mainUsingListView_Controller {
 
     public void mergeFiles(ActionEvent actionEvent) {
         boolean fileSkipped = false;
+        File outputPdfFile;
         PdfMerger pdfMerger = null;
         PdfDocument pdfDocument = null;
+        FileChooser fileChooser = new FileChooser();
         try {
             String[] filePaths = files.getPaths();
-            File file = new File(files.getParent() + "\\merged.pdf");
-            pdfDocument = new PdfDocument(new PdfWriter(file));
+            FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("PDF", "*.pdf");
+            fileChooser.setInitialFileName("merged.pdf");
+            fileChooser.getExtensionFilters().add(filter);
+            fileChooser.setTitle("Choose a location to save your merged outputPdffile...");
+            outputPdfFile = fileChooser.showSaveDialog(null);
+            pdfDocument = new PdfDocument(new PdfWriter(outputPdfFile));
             pdfMerger = new PdfMerger(pdfDocument);
             for (String path : filePaths) {
                 PdfDocument tempPdf;
@@ -52,24 +58,27 @@ public class mainUsingListView_Controller {
                         pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
                         tempPdf.close();
                     }
+                    case "txt" -> {
+                        tempPdf = toPdf.txtToPdf(new File(path));
+                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
+                        tempPdf.close();
+                    }
                     default -> fileSkipped = true;
-
                 }
             }
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Choose Some Files First!!");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Selected Files error!!");
+        } finally {
+            if (pdfMerger != null) pdfMerger.close();
+            if (pdfDocument != null) pdfDocument.close();
+            if (!(myListView.getItems().size() <= 0)) myListView.getItems().remove(0, myListView.getItems().size());
+            files = null;
+            if (fileSkipped) {
+                JOptionPane.showMessageDialog(null, "Some Files were Skipped because of incompatible File Format!!");
+            }
         }
-        if (pdfMerger != null) pdfMerger.close();
-        if (pdfDocument != null) pdfDocument.close();
-        if (!(myListView.getItems().size() <= 0)) myListView.getItems().remove(0, myListView.getItems().size());
-        System.out.println("file saved at " + files.getParent());
-        files = null;
-        if (fileSkipped) {
-            JOptionPane.showMessageDialog(null, "Some Files were Skipped because of incompatible File Format!!");
-        }
-
     }
 
     private String checkPath(String path) {
@@ -78,16 +87,15 @@ public class mainUsingListView_Controller {
         if (arr[li].equalsIgnoreCase("pdf")) {
             return "pdf";
         }
-        if (arr[li].equalsIgnoreCase("doc")
-                || arr[li].equalsIgnoreCase("docx")) {
+        if (arr[li].equalsIgnoreCase("doc") || arr[li].equalsIgnoreCase("docx")) {
             return "doc";
         }
 
-        if (arr[li].equals("jpg")
-                || arr[li].equalsIgnoreCase("jpeg")
-                || arr[li].equalsIgnoreCase("png")
-                || arr[li].equalsIgnoreCase("bmp")) {
+        if (arr[li].equalsIgnoreCase("jpg") || arr[li].equalsIgnoreCase("jpeg") || arr[li].equalsIgnoreCase("png") || arr[li].equalsIgnoreCase("bmp")) {
             return "img";
+        }
+        if (arr[li].equalsIgnoreCase("txt")) {
+            return "txt";
         }
         return "other";
     }

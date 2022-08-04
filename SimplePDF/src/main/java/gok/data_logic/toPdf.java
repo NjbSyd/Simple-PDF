@@ -7,6 +7,8 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.properties.TextAlignment;
 import fr.opensagres.poi.xwpf.converter.pdf.PdfConverter;
 import fr.opensagres.poi.xwpf.converter.pdf.PdfOptions;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
@@ -30,16 +32,26 @@ public class toPdf {
         InputStream in = new FileInputStream(file);
         XWPFDocument document = new XWPFDocument(in);
         PdfOptions options = PdfOptions.create();
-        OutputStream out = new FileOutputStream(new File(newPdfPath));
+        OutputStream out = new FileOutputStream(newPdfPath);
         PdfConverter.getInstance().convert(document, out, options);
         document.close();
         out.close();
         return new PdfDocument(new PdfReader(newPdfPath));
     }
-//
-//    public static PdfDocument txtToPdf(File file) {
-//
-//    }
 
+    public static PdfDocument txtToPdf(File file) throws IOException {
+        String newPdfPath = file.getParent() + "" + file.getName().split("\\.")[0] + ".pdf";
+        PdfDocument pdf = new PdfDocument(new PdfWriter(newPdfPath));
+        Document document = new Document(pdf).setTextAlignment(TextAlignment.JUSTIFIED);
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line;
+        while ((line = br.readLine()) != null) {
+            document.add(new Paragraph(line));
+        }
+        br.close();
+        pdf.close();
+        document.close();
+        return new PdfDocument(new PdfReader(newPdfPath));
+    }
 
 }
