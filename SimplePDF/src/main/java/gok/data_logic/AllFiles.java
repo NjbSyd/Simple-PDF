@@ -66,4 +66,13 @@ public class AllFiles {
         return index;
 
     }
+
+    public void appendMoreFiles(List<File> list) {
+        for (File currentFile : list) {
+            String fileName = currentFile.getName();
+            String filePath = currentFile.getAbsolutePath();
+            String parentPath = currentFile.getParent();
+            oneFileList.add(new oneFile(fileName, filePath, parentPath));
+        }
+    }
 }

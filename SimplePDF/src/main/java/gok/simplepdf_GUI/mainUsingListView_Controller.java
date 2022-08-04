@@ -15,6 +15,7 @@ import javafx.stage.FileChooser;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class mainUsingListView_Controller {
     @FXML
@@ -51,9 +52,8 @@ public class mainUsingListView_Controller {
                         pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
                         tempPdf.close();
                     }
-                    default -> {
-                        fileSkipped = true;
-                    }
+                    default -> fileSkipped = true;
+
                 }
             }
         } catch (NullPointerException e) {
@@ -95,9 +95,15 @@ public class mainUsingListView_Controller {
     public void getFiles(ActionEvent actionEvent) {
         try {
             FileChooser fileChooser = new FileChooser();
-            files = new AllFiles(fileChooser.showOpenMultipleDialog(null));
-            String[] filesNames = files.getNames();
-            myListView.getItems().addAll(filesNames);
+            if (files == null) {
+                files = new AllFiles(fileChooser.showOpenMultipleDialog(null));
+                myListView.getItems().addAll(files.getNames());
+            } else {
+                List<File> list = fileChooser.showOpenMultipleDialog(null);
+                files.appendMoreFiles(list);
+                myListView.getItems().remove(0, myListView.getItems().size());
+                myListView.getItems().addAll(files.getNames());
+            }
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Select One File At Least!!");
         }
