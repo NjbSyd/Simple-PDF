@@ -1,4 +1,4 @@
-package gok.simplepdf;
+package gok.simplepdf_GUI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

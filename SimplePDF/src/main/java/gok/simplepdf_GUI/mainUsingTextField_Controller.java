@@ -1,4 +1,4 @@
-package gok.simplepdf;
+package gok.simplepdf_GUI;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
