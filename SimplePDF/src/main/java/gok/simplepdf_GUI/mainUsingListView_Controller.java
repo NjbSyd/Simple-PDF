@@ -4,12 +4,13 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.utils.PdfMerger;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import gok.data_logic.AllFiles;
-import gok.data_logic.toPdf;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 
 import javax.swing.*;
@@ -22,6 +23,8 @@ public class mainUsingListView_Controller {
     ListView<String> myListView;
     @FXML
     Button addFileBtn, deleteFileBtn, moveUpBtn, moveDownBtn, mergeFilesBtn;
+    @FXML
+    FontAwesomeIcon exitBtn;
     AllFiles files;
 
     public void mergeFiles(ActionEvent actionEvent) {
@@ -35,37 +38,20 @@ public class mainUsingListView_Controller {
             FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("PDF", "*.pdf");
             fileChooser.setInitialFileName("merged.pdf");
             fileChooser.getExtensionFilters().add(filter);
-            fileChooser.setTitle("Choose a location to save your merged outputPdffile...");
+            fileChooser.setTitle("Choose a location to save your merged Pdf File...");
             outputPdfFile = fileChooser.showSaveDialog(null);
             pdfDocument = new PdfDocument(new PdfWriter(outputPdfFile));
             pdfMerger = new PdfMerger(pdfDocument);
             for (String path : filePaths) {
                 PdfDocument tempPdf;
                 String s = checkPath(path);
-                switch (s) {
-                    case "doc" -> {
-                        tempPdf = toPdf.docToPdf(new File(path));
-                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
-                        tempPdf.close();
-                    }
-                    case "img" -> {
-                        tempPdf = toPdf.imgToPdf(new File(path));
-                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
-                        tempPdf.close();
-                    }
-                    case "pdf" -> {
-                        tempPdf = new PdfDocument(new PdfReader(path));
-                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
-                        tempPdf.close();
-                    }
-                    case "txt" -> {
-                        tempPdf = toPdf.txtToPdf(new File(path));
-                        pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
-                        tempPdf.close();
-                    }
-                    default -> fileSkipped = true;
+                if ("pdf".equals(s)) {
+                    tempPdf = new PdfDocument(new PdfReader(path));
+                    pdfMerger = pdfMerger.merge(tempPdf, 1, tempPdf.getNumberOfPages());
+                    tempPdf.close();
                 }
             }
+            JOptionPane.showMessageDialog(null, outputPdfFile.getName() + " file Saved at " + outputPdfFile.getAbsolutePath());
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Choose Some Files First!!");
         } catch (IOException e) {
@@ -75,9 +61,6 @@ public class mainUsingListView_Controller {
             if (pdfDocument != null) pdfDocument.close();
             if (!(myListView.getItems().size() <= 0)) myListView.getItems().remove(0, myListView.getItems().size());
             files = null;
-            if (fileSkipped) {
-                JOptionPane.showMessageDialog(null, "Some Files were Skipped because of incompatible File Format!!");
-            }
         }
     }
 
@@ -87,22 +70,13 @@ public class mainUsingListView_Controller {
         if (arr[li].equalsIgnoreCase("pdf")) {
             return "pdf";
         }
-        if (arr[li].equalsIgnoreCase("doc") || arr[li].equalsIgnoreCase("docx")) {
-            return "doc";
-        }
-
-        if (arr[li].equalsIgnoreCase("jpg") || arr[li].equalsIgnoreCase("jpeg") || arr[li].equalsIgnoreCase("png") || arr[li].equalsIgnoreCase("bmp")) {
-            return "img";
-        }
-        if (arr[li].equalsIgnoreCase("txt")) {
-            return "txt";
-        }
-        return "other";
+        return "null";
     }
 
     public void getFiles(ActionEvent actionEvent) {
         try {
             FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF", "*.pdf"));
             if (files == null) {
                 files = new AllFiles(fileChooser.showOpenMultipleDialog(null));
                 myListView.getItems().addAll(files.getNames());
@@ -157,4 +131,7 @@ public class mainUsingListView_Controller {
         myListView.getSelectionModel().select(index);
     }
 
+    public void exit(MouseEvent mouseEvent) {
+        //Add App closing code here...
+    }
 }

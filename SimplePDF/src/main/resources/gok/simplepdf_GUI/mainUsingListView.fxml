@@ -7,11 +7,22 @@
 <?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainframe" prefHeight="489.0" prefWidth="538.0"
-            stylesheets="@css/main.css" xmlns="http://javafx.com/javafx/18"
+            style="-fx-background-color: BLACK;" stylesheets="@css/main.css" xmlns="http://javafx.com/javafx/18"
             fx:controller="gok.simplepdf_GUI.mainUsingListView_Controller">
    <children>
-      <ListView fx:id="myListView" editable="true" layoutY="36.0" prefHeight="326.0" prefWidth="464.0"
-                AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+      <Text fill="WHITE" layoutX="14.0" layoutY="24.0" lineSpacing="5.0" stroke="BLACK" strokeLineCap="ROUND"
+            strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="0.0" text="PDF Merger" textAlignment="CENTER"
+            wrappingWidth="128.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="396.0"
+            AnchorPane.topAnchor="-1.2197265625">
+         <font>
+            <Font name="Impact" size="25.0"/>
+         </font>
+      </Text>
+      <FontAwesomeIcon fx:id="exitBtn" accessibleRole="BUTTON" fill="RED" glyphName="TIMES" layoutX="515.0"
+                       layoutY="23.0" onMouseClicked="#exit" size="2em"/>
+      <ListView fx:id="myListView" editable="true" layoutY="36.0" prefHeight="332.0" prefWidth="538.0"
+                style="-fx-background-color: BLACK;" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0"/>
       <Button fx:id="mergeFilesBtn" layoutX="396.0" layoutY="435.0" mnemonicParsing="false" onAction="#mergeFiles"
               prefHeight="45.0" prefWidth="128.0" text="Merge" AnchorPane.rightAnchor="14.0">
          <graphic>
