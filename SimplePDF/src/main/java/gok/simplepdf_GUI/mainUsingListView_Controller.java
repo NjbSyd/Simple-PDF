@@ -6,12 +6,14 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.utils.PdfMerger;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import gok.data_logic.AllFiles;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.File;
@@ -20,15 +22,16 @@ import java.util.List;
 
 public class mainUsingListView_Controller {
     @FXML
+    AnchorPane mainframe;
+    @FXML
     ListView<String> myListView;
     @FXML
     Button addFileBtn, deleteFileBtn, moveUpBtn, moveDownBtn, mergeFilesBtn;
     @FXML
-    FontAwesomeIcon exitBtn;
+    FontAwesomeIcon exitBtn, minimizeBtn;
     AllFiles files;
 
-    public void mergeFiles(ActionEvent actionEvent) {
-        boolean fileSkipped = false;
+    public void mergeFiles() {
         File outputPdfFile;
         PdfMerger pdfMerger = null;
         PdfDocument pdfDocument = null;
@@ -73,7 +76,7 @@ public class mainUsingListView_Controller {
         return "null";
     }
 
-    public void getFiles(ActionEvent actionEvent) {
+    public void getFiles() {
         try {
             FileChooser fileChooser = new FileChooser();
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF", "*.pdf"));
@@ -91,7 +94,7 @@ public class mainUsingListView_Controller {
         }
     }
 
-    public void deleteFile(ActionEvent actionEvent) {
+    public void deleteFile() {
         if (files == null) {
             return;
         }
@@ -103,7 +106,7 @@ public class mainUsingListView_Controller {
         files.remove(selected);
     }
 
-    public void moveDown(ActionEvent actionEvent) {
+    public void moveDown() {
         if (files == null) {
             return;
         }
@@ -117,7 +120,7 @@ public class mainUsingListView_Controller {
         myListView.getSelectionModel().select(index);
     }
 
-    public void moveUp(ActionEvent actionEvent) {
+    public void moveUp() {
         if (files == null) {
             return;
         }
@@ -132,6 +135,12 @@ public class mainUsingListView_Controller {
     }
 
     public void exit(MouseEvent mouseEvent) {
-        //Add App closing code here...
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    public void minimize(MouseEvent mouseEvent) {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }
