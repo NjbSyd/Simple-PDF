@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b7dc3cd-9420-49b3-80a8-209ecf93a660" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SimplePDF/.idea/libraries/fontawesomefx_commons_9_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimplePDF/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/libraries/fontawesomefx_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/.idea/libraries/fontawesomefx_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/SimplePDF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/SimplePDF.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/mainUsingListView_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/mainUsingListView_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/resources/gok/simplepdf_GUI/mainUsingListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/src/main/resources/gok/simplepdf_GUI/mainUsingListView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/AllFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/AllFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/oneFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/oneFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/AppLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/AppLauncher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/pdf1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/imgs/pdf1.gif" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/README.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SimplePDF/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/AppLauncher.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/mainUsingListView_Controller.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SimplePDF/src/main/java/module-info.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2Hr4JZVshDsIaz4OC0nXKeMapWj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/tcanj/Documents/GitHub/Simple-PDF/SimplePDF",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tcanj\Documents\GitHub\Simple-PDF\SimplePDF" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gok.simplepdf_GUI.AppLauncher" />
+      <module name="SimplePDF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gok.simplepdf_GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppLauncher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b7dc3cd-9420-49b3-80a8-209ecf93a660" name="Changes" comment="" />
+      <created>1669029798245</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669029798245</updated>
+      <workItem from="1669029801536" duration="2035000" />
+      <workItem from="1698787075945" duration="405000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
