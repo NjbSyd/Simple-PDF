@@ -53,6 +53,16 @@
             <artifactId>pdfa</artifactId>
             <version>7.2.5</version>
         </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx -->
         <dependency>
             <groupId>de.jensd</groupId>

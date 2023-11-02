@@ -5,20 +5,20 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AllFiles {
-    LinkedList<oneFile> oneFileList = new LinkedList<>();
+    private LinkedList<OneFile> oneFileList = new LinkedList<>();
+
     public AllFiles(List<File> files) {
         for (File currentFile : files) {
             String fileName = currentFile.getName();
             String filePath = currentFile.getAbsolutePath();
-            String parentPath=currentFile.getParent();
-            oneFileList.add(new oneFile(fileName, filePath,parentPath));
+            String parentPath = currentFile.getParent();
+            oneFileList.add(new OneFile(fileName, filePath, parentPath));
         }
     }
 
-
     public String[] getNames() {
         LinkedList<String> temp = new LinkedList<>();
-        for (oneFile oneFile : oneFileList) {
+        for (OneFile oneFile : oneFileList) {
             temp.add(oneFile.fileName);
         }
         return temp.toArray(new String[0]);
@@ -26,7 +26,7 @@ public class AllFiles {
 
     public String[] getPaths() {
         LinkedList<String> temp = new LinkedList<>();
-        for (oneFile oneFile : oneFileList) {
+        for (OneFile oneFile : oneFileList) {
             temp.add(oneFile.filePath);
         }
         return temp.toArray(new String[0]);
@@ -46,8 +46,8 @@ public class AllFiles {
                 if (index == 0) {
                     return index;
                 }
-                oneFile file1 = oneFileList.get(index);
-                oneFile file2 = oneFileList.get(index - 1);
+                OneFile file1 = oneFileList.get(index);
+                OneFile file2 = oneFileList.get(index - 1);
                 oneFileList.set(index - 1, file1);
                 oneFileList.set(index, file2);
                 index = index - 1;
@@ -56,15 +56,14 @@ public class AllFiles {
                 if (index >= oneFileList.size() - 1) {
                     return index;
                 }
-                oneFile file1 = oneFileList.get(index);
-                oneFile file2 = oneFileList.get(index + 1);
+                OneFile file1 = oneFileList.get(index);
+                OneFile file2 = oneFileList.get(index + 1);
                 oneFileList.set(index + 1, file1);
                 oneFileList.set(index, file2);
                 index = index + 1;
             }
         }
         return index;
-
     }
 
     public void appendMoreFiles(List<File> list) {
@@ -72,7 +71,7 @@ public class AllFiles {
             String fileName = currentFile.getName();
             String filePath = currentFile.getAbsolutePath();
             String parentPath = currentFile.getParent();
-            oneFileList.add(new oneFile(fileName, filePath, parentPath));
+            oneFileList.add(new OneFile(fileName, filePath, parentPath));
         }
     }
 }

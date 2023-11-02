@@ -5,6 +5,7 @@ module gok.simplepdf {
     requires kernel;
     requires io;
     requires fontawesomefx;
+    requires org.slf4j;
 
     opens gok.simplepdf_GUI to javafx.fxml;
     exports gok.simplepdf_GUI;

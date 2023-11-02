@@ -1,15 +1,13 @@
 package gok.data_logic;
 
-public class oneFile {
+public class OneFile {
     String fileName;
     String filePath;
     String parentPath;
 
-    public oneFile(String fileName, String filePath,String parentPath) {
+    public OneFile(String fileName, String filePath, String parentPath) {
         this.fileName = fileName;
         this.filePath = filePath;
-        this.parentPath=parentPath;
+        this.parentPath = parentPath;
     }
-
-
 }

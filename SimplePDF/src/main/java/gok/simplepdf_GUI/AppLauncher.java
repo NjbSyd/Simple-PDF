@@ -12,7 +12,7 @@ public class AppLauncher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppLauncher.class.getResource("mainUsingListView.fxml"));
-        stage = new Stage(StageStyle.UNDECORATED);
+        stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setFullScreen(false);
         stage.setResizable(false);
