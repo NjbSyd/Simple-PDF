@@ -4,23 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b7dc3cd-9420-49b3-80a8-209ecf93a660" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SimplePDF/.idea/libraries/fontawesomefx_commons_9_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SimplePDF/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/libraries/fontawesomefx_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/.idea/libraries/fontawesomefx_8_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/SimplePDF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/SimplePDF.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/mainUsingListView_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/mainUsingListView_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/resources/gok/simplepdf_GUI/mainUsingListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/src/main/resources/gok/simplepdf_GUI/mainUsingListView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/AllFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/AllFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/oneFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/data_logic/oneFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/AppLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/AppLauncher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/target/classes/gok/simplepdf_GUI/mainUsingListView_Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/pdf1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/SimplePDF/imgs/pdf1.gif" afterDir="false" />
+    <list default="true" id="817e1ddf-921d-4317-8d8a-c71e144db5ea" name="Changes" comment="Files Renamed">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pdf1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/imgs/pdf1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/APP/LOGIC/AllFiles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/APP/LOGIC/OneFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/APP/UI/AppLauncher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/APP/UI/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/resources/APP/UI/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimplePDF/src/main/resources/APP/UI/mainUsingListView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fontawesomefx-8.2.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,28 +46,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/README.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SimplePDF/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/AppLauncher.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SimplePDF/src/main/java/gok/simplepdf_GUI/mainUsingListView_Controller.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SimplePDF/src/main/java/module-info.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
-  <component name="ProjectId" id="2Hr4JZVshDsIaz4OC0nXKeMapWj" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2XcTd2S4T3g7cZ1a2wMZULQn3sk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -65,30 +65,25 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/tcanj/Documents/GitHub/Simple-PDF/SimplePDF",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tcanj\Documents\GitHub\Simple-PDF\SimplePDF" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gok.simplepdf_GUI.AppLauncher" />
+      <option name="MAIN_CLASS_NAME" value="APP.UI.AppLauncher" />
       <module name="SimplePDF" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gok.simplepdf_GUI.*" />
+          <option name="PATTERN" value="APP.UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,31 +100,34 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1b7dc3cd-9420-49b3-80a8-209ecf93a660" name="Changes" comment="" />
-      <created>1669029798245</created>
+      <changelist id="817e1ddf-921d-4317-8d8a-c71e144db5ea" name="Changes" comment="" />
+      <created>1698927463454</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669029798245</updated>
-      <workItem from="1669029801536" duration="2035000" />
-      <workItem from="1698787075945" duration="405000" />
+      <updated>1698927463454</updated>
+      <workItem from="1698927468189" duration="324000" />
+      <workItem from="1698927897265" duration="302000" />
     </task>
+    <task id="LOCAL-00001" summary="Files Renamed">
+      <option name="closed" value="true" />
+      <created>1698927758675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698927758675</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="Files Renamed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Files Renamed" />
   </component>
 </project>
