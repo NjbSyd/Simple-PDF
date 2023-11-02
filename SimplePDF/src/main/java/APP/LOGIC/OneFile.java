@@ -1,4 +1,4 @@
-package gok.data_logic;
+package APP.LOGIC;
 
 public class OneFile {
     String fileName;

@@ -1,11 +1,11 @@
-package gok.data_logic;
+package APP.LOGIC;
 
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
 public class AllFiles {
-    private LinkedList<OneFile> oneFileList = new LinkedList<>();
+    private final LinkedList<OneFile> oneFileList = new LinkedList<>();
 
     public AllFiles(List<File> files) {
         for (File currentFile : files) {
@@ -30,10 +30,6 @@ public class AllFiles {
             temp.add(oneFile.filePath);
         }
         return temp.toArray(new String[0]);
-    }
-
-    public String getParent(){
-        return oneFileList.get(0).parentPath;
     }
 
     public void remove(int index) {

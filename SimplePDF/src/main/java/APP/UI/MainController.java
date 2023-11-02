@@ -1,11 +1,11 @@
-package gok.simplepdf_GUI;
+package APP.UI;
 
+import APP.LOGIC.AllFiles;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.utils.PdfMerger;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import gok.data_logic.AllFiles;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -81,7 +81,7 @@ public class MainController {
             alert.setContentText("Error while processing selected files.");
             alert.showAndWait();
         } finally {
-            if (myListView.getItems().size() > 0) {
+            if (!myListView.getItems().isEmpty()) {
                 myListView.getItems().clear();
             }
             files = null;

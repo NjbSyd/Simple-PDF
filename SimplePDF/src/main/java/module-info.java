@@ -7,6 +7,6 @@ module gok.simplepdf {
     requires fontawesomefx;
     requires org.slf4j;
 
-    opens gok.simplepdf_GUI to javafx.fxml;
-    exports gok.simplepdf_GUI;
+    opens APP.UI to javafx.fxml;
+    exports APP.UI;
 }
