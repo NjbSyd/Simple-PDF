@@ -11,7 +11,7 @@ import java.io.IOException;
 public class AppLauncher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(AppLauncher.class.getResource("mainUsingListView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AppLauncher.class.getResource("MainView.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setFullScreen(false);

@@ -6,30 +6,33 @@ import java.util.List;
 
 public class AllFiles {
     private final LinkedList<OneFile> oneFileList = new LinkedList<>();
+    private static AllFiles instance;
 
-    public AllFiles(List<File> files) {
-        for (File currentFile : files) {
-            String fileName = currentFile.getName();
-            String filePath = currentFile.getAbsolutePath();
-            String parentPath = currentFile.getParent();
-            oneFileList.add(new OneFile(fileName, filePath, parentPath));
+    private AllFiles() {
+
+    }
+
+    public static AllFiles getInstance() {
+        if (instance == null) {
+            instance = new AllFiles();
         }
+        return instance;
     }
 
     public String[] getNames() {
-        LinkedList<String> temp = new LinkedList<>();
-        for (OneFile oneFile : oneFileList) {
-            temp.add(oneFile.fileName);
+        String[] temp = new String[oneFileList.size()];
+        for (int i = 0; i < oneFileList.size(); i++) {
+            temp[i] = oneFileList.get(i).fileName;
         }
-        return temp.toArray(new String[0]);
+        return temp;
     }
 
     public String[] getPaths() {
-        LinkedList<String> temp = new LinkedList<>();
-        for (OneFile oneFile : oneFileList) {
-            temp.add(oneFile.filePath);
+        String[] temp = new String[oneFileList.size()];
+        for (int i = 0; i < oneFileList.size(); i++) {
+            temp[i] = oneFileList.get(i).filePath;
         }
-        return temp.toArray(new String[0]);
+        return temp;
     }
 
     public void remove(int index) {
@@ -62,12 +65,27 @@ public class AllFiles {
         return index;
     }
 
-    public void appendMoreFiles(List<File> list) {
+    public void AddFiles(List<File> list) {
+        boolean isListEmpty = oneFileList.isEmpty();
+        List<String> names = isListEmpty ? null : List.of(getNames());
         for (File currentFile : list) {
             String fileName = currentFile.getName();
             String filePath = currentFile.getAbsolutePath();
             String parentPath = currentFile.getParent();
-            oneFileList.add(new OneFile(fileName, filePath, parentPath));
+            OneFile file = new OneFile(fileName, filePath, parentPath);
+            if (!isListEmpty) {
+                if (!names.contains(fileName)) {
+                    oneFileList.add(file);
+                }
+            } else {
+                oneFileList.add(file);
+            }
         }
+    }
+
+    public void clearFilesList() {
+        if (!oneFileList.isEmpty())
+            oneFileList.clear();
+
     }
 }

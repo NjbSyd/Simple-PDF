@@ -17,8 +17,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.List;
+
+import static APP.UI.Utils.ShowAlertDialogue;
+import static APP.UI.Utils.checkPath;
 
 public class MainController {
     @FXML
@@ -36,10 +37,14 @@ public class MainController {
     AllFiles files;
 
     public void mergeFiles() {
-        FileChooser fileChooser = new FileChooser();
-
         try {
             String[] filePaths = files.getPaths();
+            if (filePaths.length == 0) {
+                ShowAlertDialogue(Alert.AlertType.WARNING, "No Files Selected", "Choose some files first!!");
+                return;
+            }
+            FileChooser fileChooser = new FileChooser();
+
             FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("PDF", "*.pdf");
             fileChooser.setInitialFileName("merged.pdf");
             fileChooser.getExtensionFilters().add(filter);
@@ -62,61 +67,32 @@ public class MainController {
                 pdfMerger.close();
                 pdfDocument.close();
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("File Saved");
-                alert.setHeaderText(null);
-                alert.setContentText(outputPdfFile.getName() + " file Saved at " + outputPdfFile.getAbsolutePath());
-                alert.showAndWait();
+                ShowAlertDialogue(Alert.AlertType.INFORMATION, "File Saved", "File Saved at " + outputPdfFile.getAbsolutePath());
             }
-        } catch (NullPointerException e) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("No Files Selected");
-            alert.setHeaderText(null);
-            alert.setContentText("Choose some files first!!");
-            alert.showAndWait();
-        } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Error while processing selected files.");
-            alert.showAndWait();
-        } finally {
             if (!myListView.getItems().isEmpty()) {
                 myListView.getItems().clear();
             }
-            files = null;
+            if (files != null) {
+                files.clearFilesList();
+            }
+        } catch (NullPointerException e) {
+            ShowAlertDialogue(Alert.AlertType.WARNING, "No Files Selected", "Choose some files first!!");
+        } catch (Exception e) {
+            ShowAlertDialogue(Alert.AlertType.ERROR, "Error", e.getMessage());
         }
     }
 
-    private String checkPath(String path) {
-        String[] arr = path.split("\\.");
-        int li = arr.length - 1;
-        if (arr[li].equalsIgnoreCase("pdf")) {
-            return "pdf";
-        }
-        return "null";
-    }
 
     public void getFiles() {
         try {
             FileChooser fileChooser = new FileChooser();
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF", "*.pdf"));
-
-            if (files == null) {
-                files = new AllFiles(fileChooser.showOpenMultipleDialog(null));
-                myListView.getItems().addAll(files.getNames());
-            } else {
-                List<File> list = fileChooser.showOpenMultipleDialog(null);
-                files.appendMoreFiles(list);
-                myListView.getItems().clear();
-                myListView.getItems().addAll(files.getNames());
-            }
+            files = AllFiles.getInstance();
+            files.AddFiles(fileChooser.showOpenMultipleDialog(null));
+            myListView.getItems().clear();
+            myListView.getItems().addAll(files.getNames());
         } catch (NullPointerException e) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("No Files Selected");
-            alert.setHeaderText(null);
-            alert.setContentText("Choose some files first!!");
-            alert.showAndWait();
+            ShowAlertDialogue(Alert.AlertType.WARNING, "No Files Selected", "Choose some files first!!");
         }
     }
 
