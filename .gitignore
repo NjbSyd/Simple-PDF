@@ -24,6 +24,8 @@ build/
 
 # IntelliJ IDEA files
 .idea/
+.mvn/
+target/
 
 # Visual Studio files
 *.suo
